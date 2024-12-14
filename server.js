@@ -21,6 +21,11 @@ app.get('/',(req,res)=>
 
 app.get('/op', (req,res)=>
 {
-   res.send("I will serverd chicken")
+   
+    let customize={
+        name:"Random",
+        size:"L"
+    }
+    res.send(customize)
 })
 app.listen(3000)
