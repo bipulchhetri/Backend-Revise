@@ -1,7 +1,8 @@
-console.log('Notes is loaded');
-var age=25;
+// console.log('Notes is loaded');
+// var age=25;
 
-module.exports=
-{
-    age
-    }
+// module.exports=
+// {
+//     age
+//     }
+

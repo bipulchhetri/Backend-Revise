@@ -39,3 +39,31 @@ function Checkage(ages)
 }
 console.log(result)
 
+console.log("server is running")
+
+//ABOUT FUNCTION
+
+function add(a,b){
+    return a+b;
+}
+const result =add(30,4);
+console.log(result)
+
+
+var newAdd=function(a,b)
+{
+    return a+b;
+}
+console.log(newAdd(72,3))
+
+function callBack(){
+    console.log(" I am call back funtion")
+}
+const addx=function(a,b,callBack)
+{
+    var result= a+b;
+    console.log('result', + result);
+    callBack()
+}
+addx(4,2,callBack)
+
