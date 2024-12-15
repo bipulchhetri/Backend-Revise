@@ -30,16 +30,29 @@
 // })
 // app.listen(3000)
 
+
 const express=require('express')
 const app=express();
+const db=require('./db');
+const person=require('./Models/person')
 
 app.get('/',(req,res)=>{
-    res.send("I am home page ")
+    res.send("I am home page  ")
 })
-app.get('/hello',(req,res)=>
-{
-    res.send("Hello how are you")
-});
+
+app.post('/person',async(req,res)=>{
+    try{
+        const data=req.body
+        const newPerson=new person(data);
+        const response=await newPerson.save();
+        console.log('data saved')
+        req.status(500).json(response)
+    }
+    catch(err){
+        console.log(err)
+    }
+})
+
 app.listen(3000, () =>{
     console.log("server is running ")
 })
