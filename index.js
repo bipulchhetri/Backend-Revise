@@ -1,69 +1,82 @@
-let a=4;
-let b=2;
-let ans=a+b;
-console.log(ans)
+// function add(a,b){
+//     return a+b;
+// }
 
-//array
+// result =add(5,10)
+// console.log(result)
 
-const car=['sav','bmw','tesla'];
-car.push("tata")
-console.log(car)
 
-var age=17;
-if(age<18)
+// function callback()
+// {
+//     console.log("hello bipul")
+// }
+
+// const add=function(a,b,callback)
+// {
+//     var result=a+b;
+//     console.log(result)
+//     callback();
+// }
+// add(7,6,callback)
+
+// const add=function(a,b,pr)
+// {
+//     var result=a-b;
+//     console.log(result)
+//     pr()
+// }
+// add(2,56 ,function(){
+//     console.log("sub completed")
+// })
+
+// var fs=require('fs')
+// var os=require('os')
+
+// var user=os.userInfo()
+// console.log(user.username)
+
+// fs.appendFile('greeting.txt','Hi'+ user.username+' !\n',()=>{
+//     console.log("file is created")
+// })
+
+
+// ******** JSON *****
+
+// const data={
+//     name:"Bipul",
+//     age:25
+// };
+// const json=JSON.stringify(data);
+// console.log(json)
+// console.log(typeof json)
+
+// end 
+
+// create a server *****
+
+const express=require('express')
+const app=express();
+
+app.get('/',function(req,res)
 {
-    console.log("YOU CAN'T VOTE")
-}
-else{
-    console.log("you can vote")
-}
+    res.send("Great man")
+})
 
-let x=10;
-for(let i=0;i<=x;i++)
+app.get('/hy',function(req,res)
 {
-    console.log(i)
-}
+    res.send("Great mhghgfan")
+})
 
-const person={
-    name:"Bipul",
-    age:19,
-    isStudent:false
-};
-console.log(person)
-
-const ages=[15,18,10,19];
-const result=ages.filter(Checkage);
-function Checkage(ages)
+app.get('/wow',function(req,res)
 {
-    return ages<18
-}
-console.log(result)
+    var yoo={
+        name:'wow',
+        price:1000
+    }
+    res.send(yoo)
+})
 
-console.log("server is running")
-
-//ABOUT FUNCTION
-
-function add(a,b){
-    return a+b;
-}
-const result =add(30,4);
-console.log(result)
-
-
-var newAdd=function(a,b)
+app.listen(3000)
 {
-    return a+b;
+    console.log("run ok")
 }
-console.log(newAdd(72,3))
-
-function callBack(){
-    console.log(" I am call back funtion")
-}
-const addx=function(a,b,callBack)
-{
-    var result= a+b;
-    console.log('result', + result);
-    callBack()
-}
-addx(4,2,callBack)
-
