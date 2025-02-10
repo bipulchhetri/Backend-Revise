@@ -56,7 +56,8 @@
 
 const express=require('express')
 const app=express();
-
+const db=require('./db')
+const personx=require('./Models/person')
 app.get('/',function(req,res)
 {
     res.send("Great man")
@@ -75,6 +76,26 @@ app.get('/wow',function(req,res)
     }
     res.send(yoo)
 })
+
+
+
+app.use(express.json()); // Middleware to parse JSON requests
+
+// POST API to create a person
+app.post('/person', async (req, res) => {
+    try {
+        const data = req.body;
+      
+        const newPerson = new personx(data); //
+        const response = await newPerson.save(); // database data store 
+        
+        res.status(201).json(response);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error', error: error.message });
+    }
+});
+
 
 app.listen(3000)
 {

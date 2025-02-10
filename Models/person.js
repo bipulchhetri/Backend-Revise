@@ -8,22 +8,12 @@ const personSchema= new mongoose.Schema({
     age:{
         type:Number
     },
-    work:{
-type:String,
-enum:['engineer','doctor','ips'],
-required:true
-    },
-    mobile:{
-        type:String
-    },
     email:{
-        type:Number,
-        required:true,
-        unique:true
+        type:String
     }
 });
 
 // Create model
 
-const person=mongoose.modelNames('perosn',personSchema);
+const person=mongoose.model('personx',personSchema);
 module.exports=person;
